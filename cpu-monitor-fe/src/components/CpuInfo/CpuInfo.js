@@ -12,12 +12,11 @@ export default function CpuInfo() {
 
     setCpuInfo(cpu);
   };
-  console.log(cpuInfo);
 
   useEffect(() => {
-    // setInterval(function() {
+    setInterval(function() {
     cpuUsage();
-    // }, 100)
+    }, 100)
   }, []);
 
   const coresJSX = !cpuInfo.cores ? (
@@ -47,7 +46,7 @@ export default function CpuInfo() {
         Average speed: <strong>{cpuInfo.avg}</strong>
       </p>
       <div>{coresJSX}</div>
-      <Graph info={cpuInfo.cores}/>
+      {cpuInfo.cores ? <Graph info={cpuInfo}/> : 'Loading Graph'}
     </div>
   );
 }

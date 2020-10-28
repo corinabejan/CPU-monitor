@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import axios from "axios";
 import {
   LineChart,
   Line,
@@ -13,77 +12,32 @@ import {
 
 export default function Graph(props) {
   const { info } = props;
-  
-  const graphJSX = !info ? (
-    "loading"
-  ) : (
-    <div>
-      <LineChart
-        width={730}
-        height={250}
-        data={info}
-        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend verticalAlign="top" height={36} />
-        <Line
-          type="monotone"
-          dataKey={info[0]}
-          stroke="red"
-          name="CPU1"
-        />
-        <Line
-          type="monotone"
-          dataKey={info[1]}
-          stroke="blue"
-          name="CPU2"
-        />
-        <Line
-          type="monotone"
-          dataKey={info[2]}
-          stroke="purple"
-          name="CPU3"
-        />
-        <Line
-          type="monotone"
-          dataKey={info[3]}
-          stroke="indigo"
-          name="CPU4"
-        />
-        <Line
-          type="monotone"
-          dataKey={info[4]}
-          stroke="orange"
-          name="CPU5"
-        />
-        <Line
-          type="monotone"
-          dataKey={info[5]}
-          stroke="green"
-          name="CPU6"
-        />
-        <Line
-          type="monotone"
-          dataKey={info[6]}
-          stroke="black"
-          name="CPU7"
-        />
-        <Line
-          type="monotone"
-          dataKey={info[7]}
-          stroke="pink"
-          name="CPU8"
-        />
-      </LineChart>
-    </div>
+
+  const data = info.cores.map((value,index)=>({index,value}))
+  console.log(data)
+
+  return (
+    <LineChart
+      width={730}
+      height={250}
+      data={data}
+      margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+    >
+      <XAxis dataKey="index" type="number" />
+      <YAxis />
+      <CartesianGrid strokeDasharray="3 3" />
+      <Tooltip />
+      <Legend verticalAlign="top" height={36} />
+      <Line type="monotone" dataKey="value" stroke="red" name="CPU1" />
+      <Line type="monotone" dataKey="value" stroke="blue" name="CPU2" />
+      <Line type="monotone" dataKey="value" stroke="purple" name="CPU3" />
+      <Line type="monotone" dataKey="value" stroke="indigo" name="CPU4" />
+      <Line type="monotone" dataKey="value" stroke="orange" name="CPU5" />
+      <Line type="monotone" dataKey="value" stroke="green" name="CPU6" />
+      <Line type="monotone" dataKey="value" stroke="black" name="CPU7" />
+      <Line type="monotone" dataKey="value" stroke="pink" name="CPU8" />
+    </LineChart>
   );
-
-  console.log(graphJSX);
-
-  return <>{graphJSX}</>;
 }
 
 LineChart.propTypes = {
