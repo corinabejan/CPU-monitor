@@ -1,0 +1,28 @@
+{
+  "name": "cpu-monitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "env DELAY=1000 npx nodemon .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corinabejan/cpu-monitor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/corinabejan/cpu-monitor/issues"
+  },
+  "homepage": "https://github.com/corinabejan/cpu-monitor#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6",
+    "systeminformation": "^4.27.11"
+  }
+}
