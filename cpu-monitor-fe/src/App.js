@@ -1,12 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import CpuInfo from './CpuInfo'
+import "./App.css";
+import CpuInfo from "./components/CpuInfo";
+import LoginButton from "./components/LoginButton";
+import LogoutButton from "./components/LogoutButton";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
+  const { user } = useAuth0();
+  console.log(user);
+
   return (
     <div className="App">
       <h1>CPU MONITOR</h1>
-      <CpuInfo />
+      {user ? <LogoutButton /> : <LoginButton />}
     </div>
   );
 }
