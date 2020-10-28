@@ -1,5 +1,4 @@
 import "./App.css";
-import CpuInfo from "./components/CpuInfo";
 import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
