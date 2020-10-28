@@ -11,30 +11,17 @@ import {
   CartesianGrid,
 } from "recharts";
 
-export default function Graph() {
-  const [cpuInfo, setCpuInfo] = useState({});
-
-  const cpuUsage = async () => {
-    const data = await axios.get("/info");
-    const cpu = data.data.cpuInfo;
-
-    setCpuInfo(cpu);
-  };
-
-  useEffect(() => {
-    // setInterval(function() {
-    cpuUsage();
-    // }, 100)
-  }, []);
-
-  const graphJSX = !cpuInfo.cores ? (
+export default function Graph(props) {
+  const { info } = props;
+  
+  const graphJSX = !info ? (
     "loading"
   ) : (
     <div>
       <LineChart
         width={730}
         height={250}
-        data={cpuInfo.cores}
+        data={info}
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
@@ -44,49 +31,49 @@ export default function Graph() {
         <Legend verticalAlign="top" height={36} />
         <Line
           type="monotone"
-          dataKey={cpuInfo.cores[0]}
+          dataKey={info[0]}
           stroke="red"
           name="CPU1"
         />
         <Line
           type="monotone"
-          dataKey={cpuInfo.cores[1]}
+          dataKey={info[1]}
           stroke="blue"
           name="CPU2"
         />
         <Line
           type="monotone"
-          dataKey={cpuInfo.cores[2]}
+          dataKey={info[2]}
           stroke="purple"
           name="CPU3"
         />
         <Line
           type="monotone"
-          dataKey={cpuInfo.cores[3]}
+          dataKey={info[3]}
           stroke="indigo"
           name="CPU4"
         />
         <Line
           type="monotone"
-          dataKey={cpuInfo.cores[4]}
+          dataKey={info[4]}
           stroke="orange"
           name="CPU5"
         />
         <Line
           type="monotone"
-          dataKey={cpuInfo.cores[5]}
+          dataKey={info[5]}
           stroke="green"
           name="CPU6"
         />
         <Line
           type="monotone"
-          dataKey={cpuInfo.cores[6]}
+          dataKey={info[6]}
           stroke="black"
           name="CPU7"
         />
         <Line
           type="monotone"
-          dataKey={cpuInfo.cores[7]}
+          dataKey={info[7]}
           stroke="pink"
           name="CPU8"
         />

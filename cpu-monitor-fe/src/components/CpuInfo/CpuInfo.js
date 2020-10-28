@@ -47,7 +47,7 @@ export default function CpuInfo() {
         Average speed: <strong>{cpuInfo.avg}</strong>
       </p>
       <div>{coresJSX}</div>
-      <Graph />
+      <Graph info={cpuInfo.cores}/>
     </div>
   );
 }
