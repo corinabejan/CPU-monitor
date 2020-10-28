@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./CpuInfo.css";
-import Graph from "./Graph";
+import Graph from "../Graph";
 
 export default function CpuInfo() {
   const [cpuInfo, setCpuInfo] = useState({});
