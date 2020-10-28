@@ -9,8 +9,12 @@ body {
 }
 
 button {
-  margin: 2rem 0;
-  padding: 1rem 2rem;
-  width: 120px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100px;
+  height: 50px;
   cursor: pointer;
+  background-color: teal;
+  border: 2px solid black;
+  border-radius: 8px;
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import './CpuInfo.css'
+import "./CpuInfo.css";
 import Graph from "./Graph";
 
 export default function CpuInfo() {
@@ -24,18 +24,16 @@ export default function CpuInfo() {
     "loading"
   ) : (
     <div>
-      <h4 id="cpu1">CPU1: {cpuInfo.cores[0]}</h4>
-      <h4 id="cpu2">CPU2: {cpuInfo.cores[1]}</h4>
-      <h4 id="cpu3">CPU3: {cpuInfo.cores[2]}</h4>
-      <h4 id="cpu4">CPU4: {cpuInfo.cores[3]}</h4>
-      <h4 id="cpu5">CPU5: {cpuInfo.cores[4]}</h4>
-      <h4 id="cpu6">CPU6: {cpuInfo.cores[5]}</h4>
-      <h4 id="cpu7">CPU7: {cpuInfo.cores[6]}</h4>
-      <h4 id="cpu8">CPU8: {cpuInfo.cores[7]}</h4>
+      <h4><span id="cpu1">CPU1:</span>  {cpuInfo.cores[0]}</h4>
+      <h4><span id="cpu2">CPU2:</span>  {cpuInfo.cores[1]}</h4>
+      <h4><span id="cpu3">CPU3:</span>  {cpuInfo.cores[2]}</h4>
+      <h4><span id="cpu4">CPU4:</span>  {cpuInfo.cores[3]}</h4>
+      <h4><span id="cpu5">CPU5:</span>  {cpuInfo.cores[4]}</h4>
+      <h4><span id="cpu6">CPU6:</span>  {cpuInfo.cores[5]}</h4>
+      <h4><span id="cpu7">CPU7:</span>  {cpuInfo.cores[6]}</h4>
+      <h4><span id="cpu8">CPU8:</span>  {cpuInfo.cores[7]}</h4>
     </div>
   );
-
- 
 
   return (
     <div>
@@ -49,9 +47,7 @@ export default function CpuInfo() {
         Average speed: <strong>{cpuInfo.avg}</strong>
       </p>
       <div>{coresJSX}</div>
-      <Graph/>
+      <Graph />
     </div>
   );
 }
-
-

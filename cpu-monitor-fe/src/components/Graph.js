@@ -63,7 +63,7 @@ export default function Graph() {
         <Line
           type="monotone"
           dataKey={cpuInfo.cores[3]}
-          stroke="yellow"
+          stroke="indigo"
           name="CPU4"
         />
         <Line
