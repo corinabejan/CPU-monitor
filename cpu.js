@@ -5,7 +5,7 @@ const si = require("systeminformation");
 router.get("/", async (req, res, next) => {
   try {
     const cpuInfo = await si.cpuCurrentspeed((data) => {
-      return data;
+      return data.data;
     });
     if (!cpuInfo) {
       res.status(404).send({ message: "There was no CPU usage data found!" });
