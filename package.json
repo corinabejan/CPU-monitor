@@ -7,6 +7,7 @@
     "deploy": "gh-pages -d build",
     "start": "concurrently \"node server.js\" \"cd cpu-monitor-fe && npm install && npm start\"",
     "dev": "env DELAY=1000 npx nodemon .",
+    "publishToHeroku": "cd ../ && git subtree push --prefix cpu-backend master || true",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
