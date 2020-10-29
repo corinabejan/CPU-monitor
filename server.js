@@ -3,7 +3,7 @@ const app = express();
 const corsMiddleware = require("cors");
 const jsonParser = express.json();
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 const cpuInfoRouter = require('./cpu.js')
 
